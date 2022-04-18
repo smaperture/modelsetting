@@ -1,0 +1,29 @@
+{
+  "root": "libs/model-setting",
+  "projectType": "library",
+  "sourceRoot": "libs/model-setting",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "libs/model-setting",
+        "command": "go test ./... -cover -race"
+      }
+    },
+    "coverage": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "libs/model-setting",
+        "command": "go test ./... -coverprofile=coverage.out && go tool cover -html=\"coverage.out\""
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "libs/model-setting",
+        "command": "golangci-lint run"
+      }
+    }
+  },
+  "tags": []
+}
